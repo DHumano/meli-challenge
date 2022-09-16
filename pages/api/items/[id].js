@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { dataItemFormat } from '../../../utils/dataUtils';
 
 export default async function handler(req, res) {
   const { id } = req.query;
@@ -12,7 +13,7 @@ export default async function handler(req, res) {
     url: process.env.NEXT_PUBLIC_API_MERCADOLIBRE_ITEM + `${id}/description`
   })
 
-  //parsear informacion.
+  const result = dataItemFormat(itemResponse.data, itemDescriptionResponse.data);
 
-  res.status(200).send(itemDescriptionResponse.data);
+  res.status(200).send({ result });
 }

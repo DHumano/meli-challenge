@@ -1,15 +1,24 @@
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
+import ItemList from '../components/Item/ItemList';
+import { useRouter } from 'next/router';
 
 const Items = ({ data }) => {
-  const greaterCategory = data.result.author.categories.reduce((prev, curr) =>
+  const router = useRouter();
+  const greaterCategory = data.result.categories.reduce((prev, curr) =>
     curr.results > prev?.results ? curr : prev
   );
+
+  const handleClick = (item) => {
+    router.push({
+      pathname: `/items/${item.id}`,
+    });
+  }
 
   return (
     <>
       <Layout />
-      <div>asd</div>
+      <ItemList items={data.result.items} handleClick={handleClick} />
     </>
   );
 }
