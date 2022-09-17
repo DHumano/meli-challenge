@@ -2,12 +2,13 @@ import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
 import ItemList from '../components/Item/ItemList';
 import { useRouter } from 'next/router';
+import Message from '../components/assets/Message';
 
 const Items = ({ data }) => {
   const router = useRouter();
-  const greaterCategory = data.result.categories.reduce((prev, curr) =>
-    curr.results > prev?.results ? curr : prev
-  );
+  // const greaterCategory = data?.result?.categories.reduce((prev, curr) =>
+  //   curr.results > prev?.results ? curr : prev
+  // );
 
   const handleClick = (item) => {
     router.push({
@@ -18,19 +19,23 @@ const Items = ({ data }) => {
   return (
     <>
       <Layout />
-      <ItemList items={data.result.items} handleClick={handleClick} />
+      {data && data?.result?.items.length !== 0 ? <ItemList items={data.result.items} handleClick={handleClick} /> : <Message msg={'No se encontraron resultados'} />}
     </>
   );
 }
 
 export default Items;
 
-Items.getInitialProps = ({ query }) => {
-  const { search } = query;
-
-  return fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/items?q=${search}`)
+export async function getServerSideProps(context) {
+  const { search } = context.query;
+  // Se agrega validación para evitar realizar una request innecesaria.
+  if (!search) {
+    return { props: {} }
+  }
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/items?q=${search}`)
     .then(res => res.json())
     .then(response => {
       return { data: response };
     })
+  return { props: res }
 }

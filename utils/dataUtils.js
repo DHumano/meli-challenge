@@ -4,10 +4,10 @@ const author = {
 }
 
 const dataSearchFormat = (data) => {
-  const response = data.results.slice(0, 4);
+  const response = data?.results?.slice(0, 4);
 
   // TODO, guardar categorias en context, para poder reutilizarlo.
-  const categories = data.available_filters[0].values;
+  const categories = data?.available_filters[0]?.values;
 
   const result = response.map(element => {
     return {

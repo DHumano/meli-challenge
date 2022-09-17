@@ -26,10 +26,11 @@ const Title = styled.div`
   margin-top: 12px;
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
 `;
 const DataWrapper = styled.div`
   margin-left: 15px;
+  width: 70%;
 `;
 
 const Price = styled.div`
@@ -47,7 +48,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Paragraph = styled.div`
-  width: 50%;
+  width: 30%;
   text-align: right;
   margin-top: 15px;
   font-size: 12px;
