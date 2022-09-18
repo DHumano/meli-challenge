@@ -2,12 +2,19 @@ import * as S from './styled';
 import Image from '../assets/Image';
 
 const ItemDescription = ({ item }) => {
-  console.log(item);
   return (
     <>
       {/* <BreadCrumb /> */}breadcrumb
       <S.Wrapper>
-        <Image src={item.picture} alt={item.name} width={130} height={130} />
+        <div>
+          <Image
+            src={item.picture}
+            alt={item}
+            width={530}
+            height={530}
+            layout={'responsive'}
+          />
+        </div>
         <S.DataWrapper>
           <S.Price>${item.price.amount}</S.Price>
           <S.Title>{item.title}</S.Title>

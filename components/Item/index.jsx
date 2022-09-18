@@ -10,7 +10,7 @@ const Item = ({ item, handleClick }) => {
     <>
       <S.Wrapper>
         <div onClick={onHandleClick}>
-          <Image src={item.picture} alt={item} width={130} height={130} />
+          <Image src={item.picture} alt={item} width={130} height={130} layout={"fixed"}/>
         </div>
         <S.DataWrapper>
           <S.Price onClick={onHandleClick}>${item.price.amount}</S.Price>

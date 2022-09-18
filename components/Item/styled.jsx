@@ -17,7 +17,6 @@ const Wrapper = styled.div`
   height: 180px;
   display: flex;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
   overflow: hidden;
 `;
 

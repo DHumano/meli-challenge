@@ -1,14 +1,14 @@
 import * as S from './styled';
 import Image from 'next/image';
 
-const ImageComponent = ({ src, alt, width, height }) => {
+const ImageComponent = ({ src, alt, width, height, layout }) => {
   return (
     <>
       <S.ImageWrapper>
         <Image
           src={src}
           alt={alt}
-          layout="fixed"
+          layout={layout}
           width={width}
           height={height}
         />

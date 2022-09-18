@@ -9,8 +9,6 @@ const Wrapper = styled.div`
   background: white;
   padding: 20px;
   width: 50%;
-  height: 40em;
-  display: flex;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: auto;
@@ -23,9 +21,10 @@ const Title = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 `;
+
 const DataWrapper = styled.div`
-  margin-left: 15px;
-  width: 70%;
+  margin-left: 3em;
+  width: 100%;
 `;
 
 const Price = styled.div`
@@ -46,4 +45,11 @@ const Paragraph = styled.div`
   font-family: 'Roboto', sans-serif;
 `;
 
-export { Container, Wrapper, Title, Price, DataWrapper, Paragraph };
+export {
+  Container,
+  Wrapper,
+  Title,
+  Price,
+  DataWrapper,
+  Paragraph,
+};

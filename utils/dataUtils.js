@@ -44,7 +44,7 @@ const dataItemFormat = (item, description) => {
         amount: parseFloat(item.price).toLocaleString('es'),
         decimals: item.sale_price,
       },
-      picture: item.thumbnail,
+      picture: item.pictures[0]?.url,
       condition: item.condition,
       free_shipping: item.shipping.free_shipping,
       category_id: item.category_id,
