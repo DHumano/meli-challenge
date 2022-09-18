@@ -1,7 +1,13 @@
-import Layout from '../../components/Layout'
+import Layout from '../../components/Layout';
+import ItemDescription from '../../components/ItemDescription';
 
 const Items = ({ data }) => {
-  return (<><Layout /></>);
+  return (
+    <>
+      <Layout />
+      <ItemDescription item={data.result.item} />
+    </>
+  );
 }
 
 export default Items;

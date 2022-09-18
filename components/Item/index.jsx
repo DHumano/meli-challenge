@@ -1,5 +1,5 @@
 import * as S from './styled';
-import Image from './Image';
+import Image from '../assets/Image';
 
 const Item = ({ item, handleClick }) => {
   const onHandleClick = () => {
@@ -10,7 +10,7 @@ const Item = ({ item, handleClick }) => {
     <>
       <S.Wrapper>
         <div onClick={onHandleClick}>
-          <Image src={item.picture} alt={item} />
+          <Image src={item.picture} alt={item} width={130} height={130} />
         </div>
         <S.DataWrapper>
           <S.Price onClick={onHandleClick}>${item.price.amount}</S.Price>

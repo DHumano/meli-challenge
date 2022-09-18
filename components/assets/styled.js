@@ -11,6 +11,11 @@ const Box = styled.div`
   align-items: center;
 `;
 
+const ImageWrapper = styled.div`
+  cursor: pointer;
+`;
+
 export {
-  Box
+  Box, ImageWrapper
 };
+

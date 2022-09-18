@@ -2,23 +2,18 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
   background: white;
   padding: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   width: 50%;
-  height: 180px;
+  height: 40em;
   display: flex;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
   overflow: hidden;
+  margin: auto;
 `;
 
 const Title = styled.div`

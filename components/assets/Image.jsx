@@ -1,7 +1,7 @@
 import * as S from './styled';
 import Image from 'next/image';
 
-const ImageComponent = ({ src, alt }) => {
+const ImageComponent = ({ src, alt, width, height }) => {
   return (
     <>
       <S.ImageWrapper>
@@ -9,8 +9,8 @@ const ImageComponent = ({ src, alt }) => {
           src={src}
           alt={alt}
           layout="fixed"
-          width={130}
-          height={130}
+          width={width}
+          height={height}
         />
       </S.ImageWrapper>
     </>
