@@ -23,7 +23,10 @@ const Items = ({ data }) => {
   return (
     <>
       <Layout />
-      {data && data?.result?.items.length !== 0 ? <ItemList items={data.result.items} handleClick={handleClick} /> : <Message msg={'No se encontraron resultados'} />}
+      {data && data?.result?.items.length !== 0 ?
+        <ItemList items={data.result.items} handleClick={handleClick} /> :
+        <Message msg={'No se encontraron resultados'} />
+      }
     </>
   );
 }

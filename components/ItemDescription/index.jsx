@@ -1,10 +1,11 @@
 import * as S from './styled';
 import Image from '../assets/Image';
+import BreadCrumb from '../BreadCrumb';
 
 const ItemDescription = ({ item }) => {
   return (
     <>
-      <S.Paragraph>{item.category}</S.Paragraph>
+      <BreadCrumb data={item.category} itemName={item.title} />
       <S.Wrapper>
         <div>
           <Image

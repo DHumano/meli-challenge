@@ -37,6 +37,7 @@ const dataItemFormat = (item, description, category = null) => {
     item: {
       id: item.id,
       title: item.title,
+      sold_quantity: item.sold_quantity,
       price: {
         currency: item.currency_id,
         amount: parseFloat(item.price).toLocaleString('es'),
@@ -45,7 +46,7 @@ const dataItemFormat = (item, description, category = null) => {
       picture: item.pictures[0]?.url,
       condition: item.condition,
       free_shipping: item.shipping.free_shipping,
-      category: category.name,
+      category: category.path_from_root,
       sold_quantity: item.sold_quantity,
       description: description.plain_text
     }

@@ -45,11 +45,4 @@ const Paragraph = styled.div`
   font-family: 'Roboto', sans-serif;
 `;
 
-export {
-  Container,
-  Wrapper,
-  Title,
-  Price,
-  DataWrapper,
-  Paragraph,
-};
+export { Container, Wrapper, Title, Price, DataWrapper, Paragraph };
