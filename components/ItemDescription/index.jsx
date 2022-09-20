@@ -6,22 +6,28 @@ const ItemDescription = ({ item }) => {
   return (
     <>
       <BreadCrumb data={item.category} itemName={item.title} />
-      <S.Wrapper>
-        <div>
-          <Image
-            src={item.picture}
-            alt={item}
-            width={530}
-            height={530}
-            layout={'responsive'}
-          />
-        </div>
+      <S.Container>
+        <S.Wrapper>
+          <S.ImageWrapper>
+            <Image
+              src={item.picture}
+              alt={item}
+              width={530}
+              height={530}
+              layout={'responsive'}
+            />
+          </S.ImageWrapper>
+          <S.Information>
+            <S.Price>${item.price.amount}</S.Price>
+            <S.Title>{item.title}</S.Title>
+          ButtonWip
+          </S.Information>
+        </S.Wrapper>
         <S.DataWrapper>
-          <S.Price>${item.price.amount}</S.Price>
-          <S.Title>{item.title}</S.Title>
+          <S.Title>Descripción del producto</S.Title>
+          <S.Description>{item.description}</S.Description>
         </S.DataWrapper>
-        <S.Paragraph>{item.address}</S.Paragraph>
-      </S.Wrapper>
+      </S.Container>
     </>
   );
 };
