@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import ItemList from '../components/Item/ItemList';
 import { useRouter } from 'next/router';
 import Message from '../components/assets/Message';

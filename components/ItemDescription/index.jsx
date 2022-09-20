@@ -1,6 +1,7 @@
 import * as S from './styled';
 import Image from '../assets/Image';
 import BreadCrumb from '../BreadCrumb';
+import Button from '@mui/material/Button';
 
 const ItemDescription = ({ item }) => {
   return (
@@ -18,9 +19,13 @@ const ItemDescription = ({ item }) => {
             />
           </S.ImageWrapper>
           <S.Information>
-            <S.Price>${item.price.amount}</S.Price>
+            <p>{item.sold_quantity} Vendidos</p>
             <S.Title>{item.title}</S.Title>
-          ButtonWip
+            <S.Price>
+              ${item.price.amount}
+              <S.Decimals>00</S.Decimals>
+            </S.Price>
+            <Button variant="contained">Comprar</Button>
           </S.Information>
         </S.Wrapper>
         <S.DataWrapper>

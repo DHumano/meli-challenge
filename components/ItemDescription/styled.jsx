@@ -17,11 +17,9 @@ const Container = styled.div`
 const Title = styled.div`
   cursor: pointer;
   margin-top: 12px;
-  width: 100%;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  width: 50%;
 `;
 
 const DataWrapper = styled.div`
@@ -30,12 +28,11 @@ const DataWrapper = styled.div`
 
 const Price = styled.div`
   color: rgba(0, 0, 0, 0.9);
-  display: grid;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: normal;
   margin-top: 15px;
-  font-size: 1.2em;
-  cursor: pointer;
+  font-size: 2em;
+  margin-bottom: 10px;
 `;
 
 const Description = styled.div`
@@ -44,22 +41,40 @@ const Description = styled.div`
   font-size: 14px;
   color: grey;
   font-family: 'Roboto', sans-serif;
+  width: 60%;
 `;
 
 const ImageWrapper = styled.div`
-  margin-top: 15px;
-  width: 50%;
+  width: 60%;
   margin-bottom: 15px;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
 `;
 
 const Information = styled.div`
-  margin-top: 15px;
-  width: 50%;
+  padding-left: 40px;
+  width: 40%;
   margin-bottom: 15px;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
 `;
 
-export { Container, Wrapper, Title, Price, DataWrapper, Description, ImageWrapper, Information };
+const Decimals = styled.div`
+  display: inline;
+  font-size: 12px;
+  vertical-align: text-top;
+`;
+
+export {
+  Container,
+  Wrapper,
+  Title,
+  Price,
+  DataWrapper,
+  Description,
+  ImageWrapper,
+  Information,
+  Decimals,
+};

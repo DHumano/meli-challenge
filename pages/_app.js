@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
     setCategories(data);
   }
 
-  //Se agrega contextProvider solo para simular un store de categorias.
+  // Se agrega contextProvider solo para simular un store de categorias.
   return <>
     <CategoriesContext.Provider value={{ categories: categories, handleCategories: handleCategories }}>
       <NextNProgress />
