@@ -13,10 +13,14 @@ export default async function handler(req, res) {
       method: 'get',
       url: process.env.NEXT_PUBLIC_API_MERCADOLIBRE_ITEM + `${id}/description`
     });
+    const itemCategoryResponse = await axios({
+      method: 'get',
+      url: process.env.NEXT_PUBLIC_API_MERCADOLIBRE_CATEGORY + itemResponse.data.category_id
+    });
 
-    const result = dataItemFormat(itemResponse.data, itemDescriptionResponse.data);
+    const result = dataItemFormat(itemResponse.data, itemDescriptionResponse.data, itemCategoryResponse.data);
 
     res.status(200).send({ result });
 
-  } catch { res.status(200).send({}); }
+  } catch (error) { res.status(200).send({ err: error }); }
 }

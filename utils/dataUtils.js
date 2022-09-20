@@ -5,8 +5,6 @@ const author = {
 
 const dataSearchFormat = (data) => {
   const response = data?.results?.slice(0, 4);
-
-  // TODO, guardar categorias en context, para poder reutilizarlo.
   const categories = data?.available_filters[0]?.values;
 
   const result = response.map(element => {
@@ -33,7 +31,7 @@ const dataSearchFormat = (data) => {
   }
 };
 
-const dataItemFormat = (item, description) => {
+const dataItemFormat = (item, description, category = null) => {
   return {
     author,
     item: {
@@ -47,7 +45,7 @@ const dataItemFormat = (item, description) => {
       picture: item.pictures[0]?.url,
       condition: item.condition,
       free_shipping: item.shipping.free_shipping,
-      category_id: item.category_id,
+      category: category.name,
       sold_quantity: item.sold_quantity,
       description: description.plain_text
     }

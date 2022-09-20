@@ -1,14 +1,18 @@
 import Layout from '../components/Layout';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import ItemList from '../components/Item/ItemList';
 import { useRouter } from 'next/router';
 import Message from '../components/assets/Message';
+import CategoriesContext from '../store/categories-context';
 
 const Items = ({ data }) => {
   const router = useRouter();
+  const ctx = useContext(CategoriesContext);
   // const greaterCategory = data?.result?.categories.reduce((prev, curr) =>
   //   curr.results > prev?.results ? curr : prev
   // );
+
+  useEffect(() => { ctx.handleCategories(data); }, [ctx, data]);
 
   const handleClick = (item) => {
     router.push({

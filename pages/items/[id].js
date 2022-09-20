@@ -1,11 +1,13 @@
 import Layout from '../../components/Layout';
 import ItemDescription from '../../components/ItemDescription';
+import Message from '../../components/assets/Message';
 
 const Items = ({ data }) => {
+  const { result } = data;
   return (
     <>
       <Layout />
-      <ItemDescription item={data.result.item} />
+      {result ? <ItemDescription item={result.item} /> : <Message msg={'No se encontraron resultados'} />}
     </>
   );
 }

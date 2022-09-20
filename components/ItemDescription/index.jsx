@@ -4,7 +4,7 @@ import Image from '../assets/Image';
 const ItemDescription = ({ item }) => {
   return (
     <>
-      {/* <BreadCrumb /> */}breadcrumb
+      <S.Paragraph>{item.category}</S.Paragraph>
       <S.Wrapper>
         <div>
           <Image
