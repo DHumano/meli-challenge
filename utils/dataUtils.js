@@ -3,9 +3,8 @@ const author = {
   lastname: 'Humano'
 }
 
-const dataSearchFormat = (data) => {
+const dataSearchFormat = (data, breadCrumbPathFilters) => {
   const response = data?.results?.slice(0, 4);
-  const categories = data?.available_filters[0]?.values;
 
   const result = response.map(element => {
     return {
@@ -20,14 +19,14 @@ const dataSearchFormat = (data) => {
       condition: element.condition,
       free_shipping: element.shipping.free_shipping,
       category_id: element.category_id,
-      address: element.address.city_name
+      address: element.address.city_name,
     };
   })
 
   return {
     author,
-    categories,
-    items: result
+    items: result,
+    breadCrumbPath: breadCrumbPathFilters,
   }
 };
 
