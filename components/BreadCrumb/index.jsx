@@ -1,7 +1,7 @@
 import * as S from './styled';
 
 const BreadCrumb = ({ data, itemName }) => {
-  const categories = data.map((elm) => {
+  const categories = data?.map((elm) => {
     return <S.Category key={elm.id}>{elm.name} | </S.Category>;
   });
 

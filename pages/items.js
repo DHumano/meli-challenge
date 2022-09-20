@@ -23,9 +23,10 @@ const Items = ({ data }) => {
   return (
     <>
       <Layout />
-      <BreadCrumb data={data?.result?.breadCrumbPath} itemName={search} />
-      {data && data?.result?.items.length !== 0 ?
-        <ItemList items={data.result.items} handleClick={handleClick} /> :
+
+      {data?.result && data?.result?.items.length !== 0 ?
+        (<><BreadCrumb data={data?.result?.breadCrumbPath} itemName={search} />
+          <ItemList items={data.result.items} handleClick={handleClick} /></>) :
         <Message msg={'No se encontraron resultados'} />
       }
     </>
